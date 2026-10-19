@@ -1,0 +1,474 @@
+{
+ "version": "1.0.0",
+ "actualizado": "2026-10",
+ "niveles": [
+  "Operativo",
+  "Profesional",
+  "Senior",
+  "Gerente/Dir."
+ ],
+ "comunes": {
+  "recH": [
+   15,
+   28,
+   38,
+   50
+  ],
+  "hmH": [
+   4,
+   8,
+   12,
+   16
+  ],
+  "ceoH": [
+   2,
+   3,
+   5,
+   8
+  ],
+  "ramp": [
+   3,
+   6,
+   10,
+   18
+  ],
+  "prod": [
+   0.4,
+   0.35,
+   0.3,
+   0.25
+  ],
+  "mentor": [
+   0.1,
+   0.12,
+   0.15,
+   0.15
+  ]
+ },
+ "paises": {
+  "MX": {
+   "name": "México",
+   "cur": "MXN",
+   "loc": "es-MX",
+   "sal": [
+    10000,
+    25000,
+    48000,
+    80000
+   ],
+   "ceo": 80000,
+   "mP": 1.3219,
+   "hP": 208,
+   "mG": 1.3052,
+   "hG": 208,
+   "fee": [
+    0.0542,
+    0.15,
+    0.175,
+    0.215
+   ],
+   "boards": [
+    1015,
+    2964,
+    3607,
+    3607
+   ],
+   "assess": [
+    750,
+    1500,
+    2091,
+    2091
+   ],
+   "bg": [
+    900,
+    900,
+    900,
+    900
+   ],
+   "med": [
+    400,
+    500,
+    600,
+    700
+   ],
+   "setup": [
+    8000,
+    15000,
+    20000,
+    25000
+   ],
+   "st": {
+    "fee": "weak",
+    "boards": "src",
+    "assess": "src",
+    "bg": "src",
+    "med": "est"
+   },
+   "nt": {
+    "fee": "Punto medio de rangos publicados por una agencia (ALGI 2025-26). Operativo: tarifa fija ≈ $6,500.",
+    "boards": "Precios 2026 sin IVA de OCC y Computrabajo. No incluye LinkedIn Jobs.",
+    "assess": "3 finalistas × precio por prueba (3HR, Psicometricas.com).",
+    "bg": "Estudio socioeconómico completo, $900 (un proveedor).",
+    "med": "No hay precio público verificado; es una estimación."
+   },
+   "salNote": "Estimado. Salario mínimo 2026: $9,577 al mes.",
+   "load": "IMSS, SAR, Infonavit, aguinaldo, prima vacacional e ISN 3%, con tasas 2026. Jornada de 48 h.",
+   "src": [
+    [
+     "calcu.mx — cuotas patronales IMSS 2026",
+     "https://calcu.mx/imss/cuotas-patronales"
+    ],
+    [
+     "Computrabajo México — precios",
+     "https://empresa.mx.computrabajo.com/Home/ProductsAndServices"
+    ],
+    [
+     "OCC — precios",
+     "https://www.occ.com.mx/empresas/precios"
+    ],
+    [
+     "ALGI — tarifas de reclutamiento",
+     "https://algi.mx/tarifas-reclutamiento-2026/"
+    ]
+   ]
+  },
+  "CO": {
+   "name": "Colombia",
+   "cur": "COP",
+   "loc": "es-CO",
+   "sal": [
+    2400000,
+    4500000,
+    9000000,
+    17000000
+   ],
+   "ceo": 17000000,
+   "mP": 1.38,
+   "hP": 182,
+   "mG": 1.52,
+   "hG": 182,
+   "fee": [
+    0.12,
+    0.18,
+    0.23,
+    0.29
+   ],
+   "boards": [
+    120000,
+    210000,
+    260000,
+    450000
+   ],
+   "assess": [
+    20000,
+    50000,
+    120000,
+    240000
+   ],
+   "bg": [
+    40000,
+    50000,
+    60000,
+    80000
+   ],
+   "med": [
+    60000,
+    65000,
+    80000,
+    100000
+   ],
+   "setup": [
+    1500000,
+    3000000,
+    4500000,
+    6000000
+   ],
+   "st": {
+    "fee": "weak",
+    "boards": "src",
+    "assess": "src",
+    "bg": "src",
+    "med": "src"
+   },
+   "nt": {
+    "fee": "Rangos de mercado: 8–15% operativo, 15–20% profesional, 20–25% senior, 25–33% gerencial.",
+    "boards": "Computrabajo (planes 2026) y pauta en LinkedIn Jobs.",
+    "assess": "De pruebas automatizadas cortas a baterías gerenciales.",
+    "bg": "Verificación básica de antecedentes; estudios profundos cuestan más.",
+    "med": "Examen de ingreso según riesgo ARL (obligatorio)."
+   },
+   "salNote": "Estimado. SMMLV 2026: $1.750.905.",
+   "load": "Salud, pensión, ARL, parafiscales, cesantías, prima y vacaciones. Exoneración de la Ley 1607 en salarios menores a 10 SMMLV. Jornada de 42 h.",
+   "src": [
+    [
+     "Decreto 0159 de 2026 (SMMLV), Ley 2101 de 2021 (jornada) y Ley 1607 / Art. 114-1 ET (exoneración)",
+     null
+    ],
+    [
+     "Computrabajo Colombia — planes para empresas 2026",
+     null
+    ]
+   ]
+  },
+  "CL": {
+   "name": "Chile",
+   "cur": "CLP",
+   "loc": "es-CL",
+   "sal": [
+    700000,
+    1600000,
+    2800000,
+    4000000
+   ],
+   "ceo": 4000000,
+   "mP": 1.211,
+   "hP": 182,
+   "mG": 1.1195,
+   "hG": 182,
+   "fee": [
+    0.0579,
+    0.038,
+    0.028,
+    0.0341
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    180000,
+    270000,
+    360000
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    441356,
+    784632,
+    1078869,
+    1324067
+   ],
+   "st": {
+    "fee": "weak",
+    "boards": "none",
+    "assess": "weak",
+    "bg": "none",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "Tarifa plana de una consultora (11,9 a 40 UF) expresada como % del salario.",
+    "boards": "Los portales venden por cotización; no hay precio público.",
+    "assess": "Fuente débil: $60.000–120.000 por informe × 3 finalistas.",
+    "bg": "Sin precio público.",
+    "med": "Sin precio público. Lo paga el empleador."
+   },
+   "salNote": "Estimado. Sueldo mínimo 2026: $539.000.",
+   "load": "Cotización adicional del empleador 3,5% (incluye SIS), seguro de cesantía 2,4%, mutual 0,93% y gratificación legal con tope. Jornada de 42 h.",
+   "src": [
+    [
+     "Superintendencia de Pensiones — cotización del empleador",
+     "https://www.spensiones.cl/portal/institucional/594/w3-propertyvalue-10906.html"
+    ],
+    [
+     "Topes imponibles 2026",
+     "https://www.cuatrecasas.com/es/latam/laboral/art/topes-legales-cotizaciones-previsionales-2026"
+    ],
+    [
+     "Obrii — headhunting",
+     "https://www.obriiconsulting.com/servicios/headhunting"
+    ]
+   ]
+  },
+  "AR": {
+   "name": "Argentina",
+   "cur": "ARS",
+   "loc": "es-AR",
+   "sal": [
+    1300000,
+    2500000,
+    4000000,
+    6500000
+   ],
+   "ceo": 6500000,
+   "mP": 1.3523,
+   "hP": 208,
+   "mG": 1.2806,
+   "hG": 208,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    342300,
+    342300,
+    342300
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    691650,
+    1229600,
+    1690700,
+    2074950
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "none",
+    "assess": "weak",
+    "bg": "none",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "No hay honorarios públicos verificables. Ingresa lo que te cobra tu consultora.",
+    "boards": "Sin precio público verificable.",
+    "assess": "Piso de honorarios de un Colegio de Psicólogos ($114.100) × 3 finalistas.",
+    "bg": "Sin precio público.",
+    "med": "Sin precio público. Res. SRT 37/2010: lo paga el empleador."
+   },
+   "salNote": "Solo el nivel Operativo tiene referencia (convenio de Comercio). SMVM oct-2026: $391.200.",
+   "load": "Contribuciones patronales 18% (MiPyME), obra social 6%, ART y aguinaldo, con tope de base imponible. Jornada de 48 h. Los precios en pesos se desactualizan rápido.",
+   "src": [
+    [
+     "ARCA — aportes y contribuciones",
+     "https://arca.gob.ar/relaciones-laborales/empleadores/aportes-y-contribuciones.asp"
+    ],
+    [
+     "Base imponible SIPA oct-2026",
+     "https://contadoresenred.com/base-imponible-sipa-octubre-2026-minima-y-maxima/amp/"
+    ],
+    [
+     "Res. SRT 37/2010",
+     "https://www.argentina.gob.ar/normativa/nacional/norma-163171/texto"
+    ]
+   ]
+  },
+  "GT": {
+   "name": "Guatemala",
+   "cur": "GTQ",
+   "loc": "es-GT",
+   "sal": [
+    4500,
+    9000,
+    16000,
+    30000
+   ],
+   "ceo": 30000,
+   "mP": 1.3211,
+   "hP": 190.67,
+   "mG": 1.3017,
+   "hG": 190.67,
+   "fee": [
+    0,
+    0.15,
+    0.175,
+    0.2
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    3438,
+    6112,
+    8404,
+    10314
+   ],
+   "st": {
+    "fee": "weak",
+    "boards": "none",
+    "assess": "none",
+    "bg": "none",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "Referencia genérica de 15–20% de una página comercial; no es una tarifa verificada.",
+    "boards": "Sin precio público verificable.",
+    "assess": "Sin precio público verificable.",
+    "bg": "Sin precio público verificable.",
+    "med": "Sin precio público verificable."
+   },
+   "salNote": "Estimado. Salario mínimo no agrícola 2026: Q4.002,28 + Q250 de bonificación.",
+   "load": "IGSS 10,67%, IRTRA 1%, INTECAP 1%, aguinaldo, Bono 14 y bonificación incentivo de Q250. Jornada de 44 h.",
+   "src": [
+    [
+     "EY — salario mínimo Guatemala 2026",
+     "https://www.ey.com/es_ce/technical/tax/tax-alerts/guatemala-salario-minimo-2026"
+    ],
+    [
+     "Deel — cuotas IGSS",
+     "https://www.deel.com/es/blog/igss-guatemala-guia-eor/"
+    ]
+   ]
+  }
+ },
+ "benchmark": [
+  [
+   0.1,
+   0.2
+  ],
+  [
+   0.18,
+   0.28
+  ],
+  [
+   0.22,
+   0.32
+  ],
+  [
+   0.25,
+   0.35
+  ]
+ ]
+}

@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Cuánto Cuesta Contratar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+[hidden]{display:none!important}
+body{margin:0}
+
+/* Layout: two columns — questions on the left, an itemized "receipt" that stays in view on the right; one column on phones. */
+:root{
+  --bg:#E9EDF2; --surface:#FFFFFF; --paper:#FBFCFD; --ink:#14213D; --muted:#5A6A80; --line:#D3DAE3;
+  --accent:#E3A008; --accent-ink:#3B2A00; --accent-soft:#FDF3D6;
+  --ok:#1C7A55; --ok-soft:#E1F3EA; --warn:#B4530F; --warn-soft:#FDEBDD; --info:#3B5B8C; --info-soft:#E4EBF5;
+  --bar1:#14213D; --bar2:#4F6FA3; --bar3:#A9BCD6;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E141E; --surface:#16202F; --paper:#1A2536; --ink:#E6ECF4; --muted:#97A6BA; --line:#2C3A50;
+  --accent:#F2B53A; --accent-ink:#2A1E00; --accent-soft:#3A2F14;
+  --ok:#5FC79B; --ok-soft:#173528; --warn:#F29A5B; --warn-soft:#3B2617; --info:#9DB7E0; --info-soft:#1D2A40;
+  --bar1:#E6ECF4; --bar2:#7F9DCB; --bar3:#3F5778; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E141E; --surface:#16202F; --paper:#1A2536; --ink:#E6ECF4; --muted:#97A6BA; --line:#2C3A50;
+  --accent:#F2B53A; --accent-ink:#2A1E00; --accent-soft:#3A2F14;
+  --ok:#5FC79B; --ok-soft:#173528; --warn:#F29A5B; --warn-soft:#3B2617; --info:#9DB7E0; --info-soft:#1D2A40;
+  --bar1:#E6ECF4; --bar2:#7F9DCB; --bar3:#3F5778; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 64px}
+.wrap{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+header.top{display:flex;flex-direction:column;gap:10px;max-width:760px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-display);font-stretch:112%;font-weight:850;font-size:clamp(30px,5vw,48px);line-height:1.02;margin:0;text-wrap:balance;letter-spacing:-.01em}
+.lede{color:var(--muted);margin:0;max-width:62ch;font-size:16px}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:28px;align-items:start}
+@media (max-width:920px){.grid{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- questions ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.q{display:flex;flex-direction:column;gap:8px}
+.q>label,.qlabel{font-weight:600;font-size:14px}
+.hint{font-size:13px;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.seg button:hover{border-color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.seg button:focus-visible,input:focus-visible,summary:focus-visible,.linkbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:560px){.row2{grid-template-columns:minmax(0,1fr)}}
+.money{display:flex;align-items:center;border:1px solid var(--line);border-radius:8px;background:var(--paper);overflow:hidden}
+.money span{padding:0 10px;color:var(--muted);font-family:var(--f-mono);font-size:13px;border-right:1px solid var(--line);align-self:stretch;display:flex;align-items:center}
+.money input,input.plain{font:inherit;font-family:var(--f-mono);font-size:15px;border:0;background:transparent;color:var(--ink);padding:9px 10px;width:100%;min-width:0;font-variant-numeric:tabular-nums}
+input.plain{border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+.money.big input{font-size:18px;font-weight:600}
+
+details.grp{border-top:1px solid var(--line);padding-top:14px}
+details.grp summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+details.grp summary::-webkit-details-marker{display:none}
+details.grp summary h2{font-family:var(--f-display);font-stretch:108%;font-size:19px;font-weight:750;margin:0}
+details.grp summary .sub{font-size:13px;color:var(--muted)}
+details.grp summary::after{content:"+";font-family:var(--f-mono);color:var(--muted);font-size:18px}
+details.grp[open] summary::after{content:"–"}
+.fields{display:flex;flex-direction:column;gap:14px;margin-top:14px}
+.field{display:grid;grid-template-columns:minmax(0,1fr) 190px;gap:6px 16px;align-items:start}
+@media (max-width:560px){.field{grid-template-columns:minmax(0,1fr)}}
+.field .lab{display:flex;flex-direction:column;gap:4px;min-width:0}
+.field .lab strong{font-weight:500;font-size:14px}
+.field .note{font-size:12.5px;color:var(--muted)}
+.field.off{opacity:.5}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-family:var(--f-mono);letter-spacing:.02em;padding:2px 8px;border-radius:999px;width:max-content;max-width:100%}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.b-src{background:var(--ok-soft);color:var(--ok)}
+.b-est{background:var(--info-soft);color:var(--info)}
+.b-weak{background:var(--info-soft);color:var(--info)}
+.b-none{background:var(--warn-soft);color:var(--warn)}
+.b-you{background:var(--accent-soft);color:var(--ink)}
+.linkbtn{font:inherit;font-size:13px;background:none;border:0;color:var(--info);text-decoration:underline;cursor:pointer;padding:0}
+
+/* ---------- receipt ---------- */
+.receipt-col{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:flex;flex-direction:column;gap:14px;min-width:0}
+@media (max-width:920px){.receipt-col{position:static}}
+.receipt{background:var(--paper);border:1px solid var(--line);border-radius:var(--r) var(--r) 0 0;padding:20px 20px 26px;position:relative;font-family:var(--f-mono);font-size:13px;
+  -webkit-mask:radial-gradient(circle 7px at 10px 100%,transparent 6.5px,#000 7px) bottom left/20px 100% repeat-x;mask:radial-gradient(circle 7px at 10px 100%,transparent 6.5px,#000 7px) bottom left/20px 100% repeat-x}
+.r-head{display:flex;flex-direction:column;gap:2px;padding-bottom:12px;border-bottom:1px dashed var(--line);margin-bottom:10px}
+.r-head b{font-family:var(--f-display);font-stretch:110%;font-size:16px;font-weight:800;letter-spacing:.01em;text-transform:uppercase}
+.r-head span{color:var(--muted);font-size:12px}
+.sec{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin:12px 0 4px}
+.ln{display:flex;align-items:baseline;gap:6px;padding:2px 0;font-variant-numeric:tabular-nums}
+.ln .k{flex:0 1 auto;min-width:0}
+.ln .dots{flex:1 1 auto;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:12px}
+.ln .v{flex:0 0 auto;text-align:right}
+.ln.na .k,.ln.na .v{color:var(--muted);text-decoration:line-through}
+.ln.zero .v{color:var(--warn)}
+.ln.sub{font-weight:600;border-top:1px solid var(--line);margin-top:4px;padding-top:6px}
+.total{margin-top:14px;padding:14px;background:var(--accent);color:var(--accent-ink);border-radius:8px;display:flex;flex-direction:column;gap:2px}
+.total .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.total .amt{font-family:var(--f-display);font-stretch:105%;font-weight:850;font-size:clamp(28px,4vw,36px);line-height:1.05;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.total .pct{font-size:12.5px}
+.bench{margin-top:10px;font-size:12px;color:var(--muted)}
+.chip{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;margin-left:4px}
+.c-in{background:var(--ok-soft);color:var(--ok)} .c-lo{background:var(--info-soft);color:var(--info)} .c-hi{background:var(--warn-soft);color:var(--warn)}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.card h3{margin:0;font-family:var(--f-display);font-stretch:108%;font-size:15px;font-weight:750}
+.bar{display:flex;height:12px;border-radius:6px;overflow:hidden;background:var(--line)}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12.5px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend span::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c)}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.kpi{display:flex;flex-direction:column;gap:2px;min-width:0}
+.kpi b{font-family:var(--f-mono);font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.kpi span{font-size:12.5px;color:var(--muted)}
+.alert{background:var(--warn-soft);color:var(--ink);border-radius:8px;padding:10px 12px;font-size:13px}
+.alert b{color:var(--warn)}
+.btn{font:inherit;font-weight:600;font-size:14px;padding:10px 16px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--surface);cursor:pointer;width:max-content;max-width:100%}
+.btn:hover{opacity:.9}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+#summary{font-family:var(--f-mono);font-size:12px;width:100%;min-height:180px;border:1px solid var(--line);border-radius:8px;background:var(--paper);color:var(--ink);padding:10px;resize:vertical}
+
+/* ---------- sources ---------- */
+.sources{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px}
+.sources h2{font-family:var(--f-display);font-stretch:108%;font-size:20px;margin:0}
+.sources p,.sources li{max-width:78ch;color:var(--muted);font-size:13.5px}
+.sources ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.sources a{color:var(--info)}
+.mult{overflow-x:auto}
+.mult table{border-collapse:collapse;font-family:var(--f-mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.mult td,.mult th{padding:4px 12px 4px 0;text-align:left;border-bottom:1px solid var(--line)}
+.mult th{font-weight:500;color:var(--muted)}
+footer{font-size:12.5px;color:var(--muted);max-width:90ch}
+@media (prefers-reduced-motion:no-preference){.bar i{transition:width .35s ease}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="eyebrow">Calculadora · PyMEs de 20 a 200 personas</div>
+    <h1>¿Cuánto te cuesta realmente contratar a una persona?</h1>
+    <p class="lede">La mayoría de las empresas solo cuenta lo que paga a terceros. Aquí sumamos también el tiempo de tu equipo y el onboarding, con supuestos de mercado de tu país que puedes reemplazar por tus propios números.</p>
+  </header>
+
+  <div class="grid">
+    <main class="panel" id="form" aria-label="Datos de tu proceso">
+      <div class="q">
+        <span class="qlabel" id="lbl-country">País</span>
+        <div class="seg" role="group" aria-labelledby="lbl-country" id="seg-country"></div>
+      </div>
+      <div class="q">
+        <span class="qlabel" id="lbl-level">Nivel del puesto</span>
+        <div class="seg" role="group" aria-labelledby="lbl-level" id="seg-level"></div>
+      </div>
+      <div class="row2">
+        <div class="q">
+          <label for="f-salary">Salario mensual bruto del puesto</label>
+          <div class="money big"><span class="cur"></span><input id="f-salary" inputmode="numeric" autocomplete="off"></div>
+          <span class="hint" id="salary-hint"></span>
+        </div>
+        <div class="q">
+          <label for="f-hires">¿Cuántas personas contratas al año?</label>
+          <input class="plain" id="f-hires" inputmode="numeric" autocomplete="off" value="5">
+          <span class="hint">Valor de ejemplo. Cámbialo por el tuyo.</span>
+        </div>
+      </div>
+      <div class="q">
+        <span class="qlabel" id="lbl-channel">¿Cómo reclutas este puesto?</span>
+        <div class="seg" role="group" aria-labelledby="lbl-channel" id="seg-channel"></div>
+        <span class="hint" id="channel-hint"></span>
+      </div>
+
+      <details class="grp" open id="g-direct">
+        <summary><div><h2>Lo que pagas a terceros</h2><div class="sub">Agencias, portales de empleo, pruebas y exámenes</div></div></summary>
+        <div class="fields" data-group="direct"></div>
+      </details>
+      <details class="grp" open id="g-internal">
+        <summary><div><h2>El tiempo de tu equipo</h2><div class="sub">Horas que no aparecen en ninguna factura</div></div></summary>
+        <div class="fields" data-group="internal"></div>
+      </details>
+      <details class="grp" open id="g-onb">
+        <summary><div><h2>Hasta que la persona rinde al 100%</h2><div class="sub">Onboarding, mentor y curva de aprendizaje</div></div></summary>
+        <div class="fields" data-group="onb"></div>
+      </details>
+      <div><button class="linkbtn" id="reset" type="button">Volver a los supuestos de mercado</button></div>
+    </main>
+
+    <aside class="receipt-col" aria-live="polite">
+      <div class="receipt" id="receipt"></div>
+      <div class="alert" id="alert" hidden></div>
+      <div class="card">
+        <h3>¿Dónde se va el dinero?</h3>
+        <div class="bar" id="bar"><i style="background:var(--bar1)"></i><i style="background:var(--bar2)"></i><i style="background:var(--bar3)"></i></div>
+        <div class="legend"><span style="--c:var(--bar1)" id="lg1">Terceros</span><span style="--c:var(--bar2)" id="lg2">Tiempo del equipo</span><span style="--c:var(--bar3)" id="lg3">Onboarding</span></div>
+      </div>
+      <div class="card">
+        <h3>Lo que no se ve en la contabilidad</h3>
+        <div class="kpis">
+          <div class="kpi"><b id="k-ramp"></b><span>de productividad perdida mientras aprende (aparte del total)</span></div>
+          <div class="kpi"><b id="k-full"></b><span>costo total incluyendo esa curva</span></div>
+          <div class="kpi"><b id="k-int"></b><span>en horas de tu equipo directivo por contratación</span></div>
+          <div class="kpi"><b id="k-year"></b><span id="k-year-lbl">al año</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>¿Quieres revisarlo con tu ejecutivo?</h3>
+        <span class="hint">Esta página no guarda ni envía lo que escribes. Copia tu resumen y pégalo en un correo para quien te compartió esta calculadora.</span>
+        <button class="btn" id="copy" type="button">Copiar mi resumen</button>
+        <span class="hint" id="copied" role="status" hidden></span>
+        <textarea id="summary" readonly hidden aria-label="Resumen para copiar"></textarea>
+      </div>
+    </aside>
+  </div>
+
+  <section class="sources" id="sources"></section>
+  <footer>Estimación con fines ilustrativos, actualizada a octubre de 2026. No es asesoría legal, fiscal ni contable. La página no guarda ni envía los datos que escribes. Los supuestos marcados como “Estimado” o “Sin dato” no provienen de un estudio verificado; reemplázalos por tus propios números.</footer>
+</div>
+
+<script>
+(async()=>{
+let LV,COMMON,C,BENCH,DATA_META;
+try{
+ const r=await fetch("data/paises.json",{cache:"no-cache"});if(!r.ok)throw new Error(r.status);
+ const d=await r.json();LV=d.niveles;COMMON=d.comunes;C=d.paises;BENCH=d.benchmark;DATA_META={v:d.version,u:d.actualizado};
+}catch(e){
+ document.body.insertAdjacentHTML("afterbegin",'<p style="padding:24px;font-family:sans-serif">No se pudieron cargar los datos de la calculadora. Recarga la página; si el problema continúa, avísale a quien te envió el enlace.</p>');
+ return;
+}
+const CH=["Job boards","Agencia","Ambos"];
+const CH_LBL={"Job boards":"Portales de empleo","Agencia":"Agencia / headhunter","Ambos":"Ambos"};
+
+/* field definitions */
+const F=[
+ {k:"fee",g:"direct",t:"pct",l:"Honorario de agencia (% del salario anual)",d:(c,L)=>c.fee[L],ch:"agency"},
+ {k:"boards",g:"direct",t:"money",l:"Portales de empleo por vacante",d:(c,L)=>c.boards[L],ch:"boards"},
+ {k:"assess",g:"direct",t:"money",l:"Pruebas psicométricas",d:(c,L)=>c.assess[L]},
+ {k:"bg",g:"direct",t:"money",l:"Verificación de antecedentes",d:(c,L)=>c.bg[L]},
+ {k:"med",g:"direct",t:"money",l:"Examen médico de ingreso",d:(c,L)=>c.med[L]},
+ {k:"recSal",g:"internal",t:"money",l:"Salario mensual de quien recluta",d:(c,L)=>c.sal[1],n:"Por defecto, un sueldo de nivel profesional en tu país."},
+ {k:"recH",g:"internal",t:"num",l:"Horas de quien recluta en todo el proceso",d:(c,L)=>COMMON.recH[L],n:"Publicar, filtrar CVs, agendar, entrevistar, pedir referencias."},
+ {k:"hmSal",g:"internal",t:"money",l:"Salario mensual del jefe directo",d:(c,L)=>c.sal[L]},
+ {k:"hmH",g:"internal",t:"num",l:"Horas del jefe directo en entrevistas",d:(c,L)=>COMMON.hmH[L],n:"El costo más invisible: casi nadie lo cuenta."},
+ {k:"ceoSal",g:"internal",t:"money",l:"Salario mensual del CEO o fundador",d:(c,L)=>c.ceo,n:"Pon 0 horas si no participa."},
+ {k:"ceoH",g:"internal",t:"num",l:"Horas del CEO o fundador",d:(c,L)=>COMMON.ceoH[L]},
+ {k:"ramp",g:"onb",t:"num",l:"Semanas hasta que rinde al 100%",d:(c,L)=>COMMON.ramp[L]},
+ {k:"prod",g:"onb",t:"pct",l:"Productividad promedio en ese periodo (%)",d:(c,L)=>COMMON.prod[L]},
+ {k:"mSal",g:"onb",t:"money",l:"Salario mensual del mentor",d:(c,L)=>c.sal[L]},
+ {k:"mPct",g:"onb",t:"pct",l:"Tiempo del mentor dedicado (%)",d:(c,L)=>COMMON.mentor[L]},
+ {k:"setup",g:"onb",t:"money",l:"Equipo y accesos (laptop, licencias)",d:(c,L)=>c.setup[L],n:"Pon 0 si el equipo ya existe."}
+];
+const BADGE={src:["b-src","Con fuente"],weak:["b-weak","Fuente débil"],est:["b-est","Estimado"],none:["b-none","Sin dato · ingresa tu valor"],you:["b-you","Tu dato"]};
+
+let SUMMARY="";
+let S={cc:"MX",L:1,ch:null,ov:{},sal:null,hires:5};
+try{const s=JSON.parse(localStorage.getItem("cth-state")||"null");if(s&&C[s.cc]){S.cc=s.cc;S.L=s.L|0;}}catch(e){}
+const $=id=>document.getElementById(id);
+const fmt=(v,c)=>new Intl.NumberFormat(c.loc,{style:"currency",currency:c.cur,maximumFractionDigits:0}).format(Math.round(v||0));
+const fnum=(v,c)=>new Intl.NumberFormat(c.loc,{maximumFractionDigits:0}).format(Math.round(v||0));
+const pct=v=>(Math.round(v*1000)/10).toLocaleString("es-MX")+"%";
+const digits=s=>{const d=String(s).replace(/[^\d]/g,"");return d===""?null:+d};
+const dec=s=>{if(String(s).trim()==="")return null;const v=parseFloat(String(s).replace(",","."));return isNaN(v)?null:v};
+const cur=()=>C[S.cc];
+const chan=()=>S.ch||(S.L>=2?"Agencia":"Job boards");
+function val(k){const f=F.find(x=>x.k===k);return (k in S.ov)?S.ov[k]:f.d(cur(),S.L)}
+function status(f){if(f.k in S.ov)return "you";const st=cur().st[f.k];return st||"est"}
+function note(f){return (cur().nt&&cur().nt[f.k])||f.n||""}
+
+function seg(el,items,isOn,onPick){el.innerHTML="";items.forEach((it,i)=>{const b=document.createElement("button");b.type="button";b.textContent=it.label;b.setAttribute("aria-pressed",isOn(it,i)?"true":"false");b.onclick=()=>onPick(it,i);el.appendChild(b)})}
+
+function renderControls(){
+ const c=cur();
+ seg($("seg-country"),Object.keys(C).map(k=>({k,label:C[k].name})),it=>it.k===S.cc,it=>{if(it.k!==S.cc){S.cc=it.k;S.ov={};S.sal=null;S.ch=null;save();renderAll()}});
+ seg($("seg-level"),LV.map((l,i)=>({label:l,i})),(it,i)=>i===S.L,(it,i)=>{if(i!==S.L){S.L=i;S.ov={};S.sal=null;save();renderAll()}});
+ seg($("seg-channel"),CH.map(k=>({k,label:CH_LBL[k]})),it=>it.k===chan(),it=>{S.ch=it.k;renderControls();renderFields();calc()});
+ $("channel-hint").textContent=S.ch?"Solo sumamos el costo del canal que elegiste.":"Supuesto típico para este nivel: "+CH_LBL[chan()].toLowerCase()+". Cámbialo si reclutas distinto.";
+ document.querySelectorAll(".cur").forEach(s=>s.textContent=c.cur);
+ const sv=S.sal??c.sal[S.L];$("f-salary").value=fnum(sv,c);
+ $("salary-hint").textContent=(S.sal==null?"Supuesto: ":"Tu dato. Referencia: ")+fnum(c.sal[S.L],c)+" "+c.cur+". "+c.salNote;
+}
+function renderFields(){
+ const c=cur();const ch=chan();
+ document.querySelectorAll(".fields").forEach(box=>{
+  box.innerHTML="";
+  F.filter(f=>f.g===box.dataset.group).forEach(f=>{
+   const off=(f.ch==="agency"&&!(ch==="Agencia"||ch==="Ambos"))||(f.ch==="boards"&&!(ch==="Job boards"||ch==="Ambos"));
+   const st=status(f);const [bc,bt]=BADGE[st];const v=val(f.k);
+   const wrap=document.createElement("div");wrap.className="field"+(off?" off":"");
+   const id="f-"+f.k;
+   let input;
+   if(f.t==="money")input=`<div class="money"><span>${c.cur}</span><input id="${id}" inputmode="numeric" autocomplete="off" value="${fnum(v,c)}"></div>`;
+   else if(f.t==="pct")input=`<input class="plain" id="${id}" inputmode="decimal" autocomplete="off" value="${Math.round(v*1000)/10}">`;
+   else input=`<input class="plain" id="${id}" inputmode="decimal" autocomplete="off" value="${v}">`;
+   wrap.innerHTML=`<div class="lab"><label for="${id}"><strong>${f.l}</strong></label><span class="badge ${bc}" id="b-${f.k}">${bt}</span><span class="note">${off?"No se cuenta con el canal elegido.":note(f)}</span></div><div>${input}</div>`;
+   box.appendChild(wrap);
+   const inp=wrap.querySelector("input");
+   inp.addEventListener("input",()=>{
+     let x=f.t==="money"?digits(inp.value):dec(inp.value);
+     if(x==null){delete S.ov[f.k]}else{S.ov[f.k]=f.t==="pct"?x/100:x}
+     const b=$("b-"+f.k);const [nc,nt]=BADGE[status(f)];b.className="badge "+nc;b.textContent=nt;calc()});
+   if(f.t==="money")inp.addEventListener("blur",()=>{inp.value=fnum(val(f.k),c)});
+  });
+ });
+}
+function line(k,v,c,cls=""){return `<div class="ln ${cls}"><span class="k">${k}</span><span class="dots"></span><span class="v">${typeof v==="string"?v:fmt(v,c)}</span></div>`}
+
+function calc(){
+ const c=cur(),L=S.L,ch=chan();
+ const sal=S.sal??c.sal[L];
+ const ag=ch==="Agencia"||ch==="Ambos",jb=ch==="Job boards"||ch==="Ambos";
+ const fee=ag?sal*12*val("fee"):0, boards=jb?val("boards"):0;
+ const assess=val("assess"),bg=val("bg"),med=val("med");
+ const direct=fee+boards+assess+bg+med;
+ const rec=val("recH")*val("recSal")*c.mP/c.hP;
+ const hm=val("hmH")*val("hmSal")*c.mG/c.hG;
+ const ceo=val("ceoH")*val("ceoSal")*c.mG/c.hG;
+ const internal=rec+hm+ceo;
+ const months=val("ramp")/4.33;
+ const lost=months*(1-val("prod"))*sal;
+ const mentor=val("mSal")*val("mPct")*months;
+ const setup=val("setup");
+ const onb=mentor+setup;
+ const total=direct+internal+onb;
+ const p=sal>0?total/(sal*12):0;
+ const [lo,hi]=BENCH[L];
+ const chip=p<lo?`<span class="chip c-lo">por debajo</span>`:p>hi?`<span class="chip c-hi">por encima</span>`:`<span class="chip c-in">dentro</span>`;
+ const z=k=>(!(k in S.ov)&&c.st[k]==="none"&&val(k)===0)?"zero":"";
+ const ov=Object.keys(S.ov).map(k=>F.find(x=>x.k===k).l).concat(S.sal!=null?["Salario del puesto"]:[]);
+ const m=v=>fmt(v,c);
+ SUMMARY=[`Costo de contratación — ${LV[L]} · ${c.name}`,`Salario mensual: ${m(sal)} · Canal: ${CH_LBL[ch]} · Contrataciones al año: ${S.hires||0}`,``,
+  `Terceros: ${m(direct)}`,`  Agencia: ${ag?m(fee):"no aplica"} | Portales: ${jb?m(boards):"no aplica"} | Pruebas: ${m(assess)} | Antecedentes: ${m(bg)} | Examen médico: ${m(med)}`,
+  `Tiempo del equipo: ${m(internal)}`,`  Quien recluta: ${m(rec)} | Jefe directo: ${m(hm)} | CEO: ${m(ceo)}`,
+  `Onboarding: ${m(onb)}`,`  Mentor: ${m(mentor)} | Equipo y accesos: ${m(setup)}`,``,
+  `COSTO TOTAL DE CONTRATAR: ${m(total)} (${pct(p)} del salario anual)`,`Productividad perdida en la curva de aprendizaje (aparte): ${m(lost)}`,`Total incluyendo esa curva: ${m(total+lost)}`,`Al año (${S.hires||0} contrataciones): ${m(total*(S.hires||0))}`,``,
+  `Datos propios que ingresé: ${ov.length?ov.join(", "):"ninguno (todo son supuestos de mercado)"}`].join("\n");
+ $("receipt").innerHTML=`
+  <div class="r-head"><b>Costo de una contratación</b><span>${LV[L]} · ${c.name} · salario ${fmt(sal,c)}/mes</span></div>
+  <div class="sec">Terceros</div>
+  ${line("Agencia / headhunter",ag?fee:"no aplica",c,ag?z("fee"):"na")}
+  ${line("Portales de empleo",jb?boards:"no aplica",c,jb?z("boards"):"na")}
+  ${line("Pruebas psicométricas",assess,c,z("assess"))}
+  ${line("Antecedentes",bg,c,z("bg"))}
+  ${line("Examen médico",med,c,z("med"))}
+  ${line("Subtotal",direct,c,"sub")}
+  <div class="sec">Tiempo de tu equipo</div>
+  ${line("Quien recluta",rec,c)}
+  ${line("Jefe directo",hm,c)}
+  ${line("CEO / fundador",ceo,c)}
+  ${line("Subtotal",internal,c,"sub")}
+  <div class="sec">Onboarding</div>
+  ${line("Mentor",mentor,c)}
+  ${line("Equipo y accesos",setup,c)}
+  ${line("Subtotal",onb,c,"sub")}
+  <div class="total"><span class="lbl">Costo total de contratar</span><span class="amt">${fmt(total,c)}</span><span class="pct">${pct(p)} del salario anual</span></div>
+  <div class="bench">Referencia orientativa para ${LV[L].toLowerCase()}: ${Math.round(lo*100)}–${Math.round(hi*100)}% del salario anual${chip}. Es una estimación internacional, no un estudio de ${c.name}.</div>`;
+ const parts=[direct,internal,onb],sum=parts.reduce((a,b)=>a+b,0)||1;
+ $("bar").querySelectorAll("i").forEach((el,i)=>el.style.width=(parts[i]/sum*100)+"%");
+ ["Terceros","Tiempo del equipo","Onboarding"].forEach((t,i)=>$("lg"+(i+1)).textContent=`${t} ${Math.round(parts[i]/sum*100)}%`);
+ $("k-ramp").textContent=fmt(lost,c);
+ $("k-full").textContent=fmt(total+lost,c);
+ $("k-int").textContent=fmt(hm+ceo,c);
+ const n=S.hires||0;$("k-year").textContent=fmt(total*n,c);$("k-year-lbl").textContent=`al año con ${n} ${n===1?"contratación":"contrataciones"} de este nivel`;
+ const missing=["fee","boards","assess","bg","med"].filter(k=>{const f=F.find(x=>x.k===k);const on=!(f.ch==="agency"&&!ag)&&!(f.ch==="boards"&&!jb);return on&&z(k)});
+ const a=$("alert");
+ if(missing.length){a.hidden=false;a.innerHTML=`<b>${missing.length} ${missing.length===1?"concepto está":"conceptos están"} en cero</b> porque no hay un precio público confiable en ${c.name}. Ingresa lo que pagas para que el total no quede subestimado.`}else a.hidden=true;
+}
+function renderSources(){
+ const c=cur();
+ $("sources").innerHTML=`<h2>Supuestos de ${c.name}</h2>
+  <p>Las horas internas se valúan con el salario × un multiplicador de carga social calculado con la normativa de ${c.name}: ${c.load}</p>
+  <div class="mult"><table><thead><tr><th>Multiplicador usado</th><th>Valor</th><th>Horas al mes</th></tr></thead><tbody>
+   <tr><td>Quien recluta (nivel profesional)</td><td>${c.mP.toFixed(2)}×</td><td>${Math.round(c.hP)}</td></tr>
+   <tr><td>Jefe directo y CEO (nivel gerencial)</td><td>${c.mG.toFixed(2)}×</td><td>${Math.round(c.hG)}</td></tr></tbody></table></div>
+  <p>La productividad perdida = semanas ÷ 4,33 × (1 − % de productividad) × salario. Se muestra aparte porque es el costo de la curva de aprendizaje, no de la contratación.</p>
+  <ul>${c.src.map(([t,u])=>u?`<li><a href="${u}" target="_blank" rel="noopener">${t}</a></li>`:`<li>${t}</li>`).join("")}</ul>`;
+}
+function save(){try{localStorage.setItem("cth-state",JSON.stringify({cc:S.cc,L:S.L}))}catch(e){}}
+function renderAll(){renderControls();renderFields();renderSources();calc()}
+
+$("f-salary").addEventListener("input",e=>{const x=digits(e.target.value);S.sal=x;calc();
+  const c=cur();$("salary-hint").textContent=(S.sal==null?"Supuesto: ":"Tu dato. Referencia: ")+fnum(c.sal[S.L],c)+" "+c.cur+". "+c.salNote});
+$("f-salary").addEventListener("blur",e=>{e.target.value=fnum(S.sal??cur().sal[S.L],cur())});
+$("f-hires").addEventListener("input",e=>{S.hires=digits(e.target.value)||0;calc()});
+$("copy").onclick=()=>{const ta=$("summary"),ok=$("copied");ta.value=SUMMARY;
+  const show=t=>{ok.hidden=false;ok.textContent=t};
+  const fallback=()=>{ta.hidden=false;ta.focus();ta.select();show("Tu navegador no permitió copiar automáticamente. El resumen está seleccionado abajo: cópialo con Ctrl+C o ⌘+C.")};
+  try{navigator.clipboard.writeText(SUMMARY).then(()=>{ta.hidden=true;show("Resumen copiado. Pégalo en un correo.")},fallback)}catch(e){fallback()}};
+$("reset").onclick=()=>{S.ov={};S.sal=null;S.ch=null;renderAll()};
+renderAll();
+})();
+</script>
+
+</body>
+</html>

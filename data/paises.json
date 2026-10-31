@@ -1,5 +1,5 @@
 {
- "version": "1.0.0",
+ "version": "1.0.1",
  "actualizado": "2026-10",
  "niveles": [
   "Operativo",
@@ -106,7 +106,7 @@
    },
    "nt": {
     "fee": "Punto medio de rangos publicados por una agencia (ALGI 2025-26). Operativo: tarifa fija ≈ $6,500.",
-    "boards": "Precios 2026 sin IVA de OCC y Computrabajo. No incluye LinkedIn Jobs.",
+    "boards": "Precios 2026 sin IVA de OCC y Computrabajo.",
     "assess": "3 finalistas × precio por prueba (3HR, Psicometricas.com).",
     "bg": "Estudio socioeconómico completo, $900 (un proveedor).",
     "med": "No hay precio público verificado; es una estimación."
@@ -157,7 +157,7 @@
     120000,
     210000,
     260000,
-    450000
+    260000
    ],
    "assess": [
     20000,
@@ -192,7 +192,7 @@
    },
    "nt": {
     "fee": "Rangos de mercado: 8–15% operativo, 15–20% profesional, 20–25% senior, 25–33% gerencial.",
-    "boards": "Computrabajo (planes 2026) y pauta en LinkedIn Jobs.",
+    "boards": "Computrabajo (planes 2026, con IVA). Gerente usa el plan Premium, igual que Senior.",
     "assess": "De pruebas automatizadas cortas a baterías gerenciales.",
     "bg": "Verificación básica de antecedentes; estudios profundos cuestan más.",
     "med": "Examen de ingreso según riesgo ARL (obligatorio)."

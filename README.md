@@ -1,6 +1,6 @@
 # Calculadora de costo de contratar (PyMEs LATAM)
 
-Página estática de solo consulta. Países: México, Colombia, Chile, Argentina, Guatemala.
+Página estática de solo consulta. Países: México, Colombia, Chile, Argentina, Guatemala, Perú, Costa Rica, Panamá, Ecuador y Honduras.
 No guarda ni envía datos del usuario. Los resultados son estimaciones: cada supuesto indica su nivel de fuente.
 La página lleva `noindex`: no aparece en buscadores y se comparte solo por enlace.
 

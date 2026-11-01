@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1.0 (2026-11)
+- Nuevos países: Perú, Costa Rica, Panamá, Ecuador y Honduras.
+- Perú usa el régimen general; en pequeña empresa y microempresa la carga social es menor.
+- Ecuador y Honduras: el multiplicador de carga social cambia por nivel (montos fijos y techos de cotización).
+- Chile: sueldo mínimo de $553.553 y precio de Trabajando.com (fuente débil).
+- Argentina: carga social con seguro de vida obligatorio; la ART queda fuera.
+
 ## 1.0.2 (2026-11)
 - La página ya no se indexa en buscadores (`noindex`).
 

@@ -1,6 +1,6 @@
 {
- "version": "1.0.2",
- "actualizado": "2026-10",
+ "version": "1.1.0",
+ "actualizado": "2026-11",
  "niveles": [
   "Operativo",
   "Profesional",
@@ -221,9 +221,9 @@
     4000000
    ],
    "ceo": 4000000,
-   "mP": 1.211,
+   "mP": 1.2148,
    "hP": 182,
-   "mG": 1.1195,
+   "mG": 1.121,
    "hG": 182,
    "fee": [
     0.0579,
@@ -232,10 +232,10 @@
     0.0341
    ],
    "boards": [
-    0,
-    0,
-    0,
-    0
+    69900,
+    69900,
+    69900,
+    69900
    ],
    "assess": [
     0,
@@ -263,19 +263,19 @@
    ],
    "st": {
     "fee": "weak",
-    "boards": "none",
+    "boards": "weak",
     "assess": "weak",
     "bg": "none",
     "med": "none"
    },
    "nt": {
     "fee": "Tarifa plana de una consultora (11,9 a 40 UF) expresada como % del salario.",
-    "boards": "Los portales venden por cotización; no hay precio público.",
+    "boards": "Trabajando.com: aviso simple $69.900 + IVA (fuente débil). Otros portales venden por cotización.",
     "assess": "Fuente débil: $60.000–120.000 por informe × 3 finalistas.",
     "bg": "Sin precio público.",
     "med": "Sin precio público. Lo paga el empleador."
    },
-   "salNote": "Estimado. Sueldo mínimo 2026: $539.000.",
+   "salNote": "Estimado. Sueldo mínimo: $553.553 desde mayo de 2026 (Ley 21.830).",
    "load": "Cotización adicional del empleador 3,5% (incluye SIS), seguro de cesantía 2,4%, mutual 0,93% y gratificación legal con tope. Jornada de 42 h.",
    "src": [
     [
@@ -303,9 +303,9 @@
     6500000
    ],
    "ceo": 6500000,
-   "mP": 1.3523,
+   "mP": 1.3435,
    "hP": 208,
-   "mG": 1.2806,
+   "mG": 1.2742,
    "hG": 208,
    "fee": [
     0,
@@ -358,7 +358,7 @@
     "med": "Sin precio público. Res. SRT 37/2010: lo paga el empleador."
    },
    "salNote": "Solo el nivel Operativo tiene referencia (convenio de Comercio). SMVM oct-2026: $391.200.",
-   "load": "Contribuciones patronales 18% (MiPyME), obra social 6%, ART y aguinaldo, con tope de base imponible. Jornada de 48 h. Los precios en pesos se desactualizan rápido.",
+   "load": "Contribuciones patronales 18% (MiPyME), obra social 6%, seguro de vida obligatorio y aguinaldo, con tope de base imponible. No incluye la ART (depende de la aseguradora y la actividad). Jornada de 48 h. Los precios en pesos se desactualizan rápido.",
    "src": [
     [
      "ARCA — aportes y contribuciones",
@@ -449,6 +449,416 @@
     [
      "Deel — cuotas IGSS",
      "https://www.deel.com/es/blog/igss-guatemala-guia-eor/"
+    ]
+   ]
+  },
+  "PE": {
+   "name": "Perú",
+   "cur": "PEN",
+   "loc": "es-PE",
+   "sal": [
+    1500,
+    3400,
+    5400,
+    20000
+   ],
+   "ceo": 20000,
+   "mP": 1.376,
+   "hP": 208,
+   "mG": 1.376,
+   "hG": 208,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    339,
+    339,
+    508,
+    508
+   ],
+   "assess": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    63,
+    63,
+    63,
+    63
+   ],
+   "setup": [
+    1552,
+    2758,
+    3793,
+    4655
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "weak",
+    "assess": "none",
+    "bg": "none",
+    "med": "weak"
+   },
+   "nt": {
+    "fee": "Las agencias no publican tarifas en Perú.",
+    "boards": "Bumeran: aviso Simple S/400 y Destacado S/599 con IGV (aquí sin IGV). Computrabajo e Indeed: sin precio público.",
+    "assess": "Sin precio público verificable.",
+    "bg": "Los certificados policial y judicial suelen tramitarlos y pagarlos los candidatos.",
+    "med": "Examen médico ocupacional de ingreso: S/59–89 con IGV en clínicas de Lima (aquí el punto medio, sin IGV). Es obligatorio."
+   },
+   "salNote": "Estimado. Remuneración mínima vital: S/1.230 desde octubre de 2026.",
+   "load": "régimen general, con EsSalud 9%, dos gratificaciones de un sueldo con bonificación extraordinaria de 9%, CTS y seguro Vida Ley. En pequeña empresa la carga es menor (gratificación y CTS a la mitad) y en microempresa mucho menor. Jornada de 48 h.",
+   "src": [
+    [
+     "El Peruano — remuneración mínima vital S/1.230",
+     "https://elperuano.pe/noticia/305675-gobierno-oficializa-aumento-del-sueldo-minimo-vital-subira-a-s1230-a-partir-del-1-de-octubre"
+    ],
+    [
+     "Cuatrecasas — incremento de la remuneración mínima vital",
+     "https://www.cuatrecasas.com/es/latam/laboral/art/incrementan-remuneracion-minima-vital"
+    ]
+   ]
+  },
+  "CR": {
+   "name": "Costa Rica",
+   "cur": "CRC",
+   "loc": "es-CR",
+   "sal": [
+    500000,
+    1200000,
+    2000000,
+    4000000
+   ],
+   "ceo": 4000000,
+   "mP": 1.3616,
+   "hP": 208,
+   "mG": 1.3616,
+   "hG": 208,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    205880,
+    366008,
+    503261,
+    617639
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "none",
+    "assess": "none",
+    "bg": "none",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "Las agencias no publican tarifas en Costa Rica.",
+    "boards": "Sin precio público verificable.",
+    "assess": "Sin precio público verificable.",
+    "bg": "Sin precio público verificable.",
+    "med": "Sin precio público verificable."
+   },
+   "salNote": "Estimado. Salario mínimo 2026 (trabajador no calificado): ₡373.092.",
+   "load": "cargas patronales de la CCSS y otras instituciones de 26,83% (SEM, IVM, Banco Popular, FODESAF, IMAS, INA, FCL, OPC e INS), póliza de riesgos del trabajo de ~1% (varía por actividad) y aguinaldo. Jornada de 48 h.",
+   "src": [
+    [
+     "EY — aumento de cuotas obrero-patronales 2026",
+     "https://www.ey.com/es_ce/technical/tax/tax-alerts/costa-rica-aumento-en-cuotas-obrero-patronales-aplicable-desde-enero-20261"
+    ],
+    [
+     "La Nación — cargas sociales 2026",
+     "https://www.nacion.com/economia/cargas-sociales-en-costa-rica-2026-cuanto-pagaran/KQ6NQJ2Q55AOZJQN3MU2AOKUY4/story/"
+    ],
+    [
+     "Alegra — cargas sociales CCSS 2026",
+     "https://blog.alegra.com/costa-rica/cargas-sociales-ccss-2026-patronos-costa-rica/"
+    ]
+   ]
+  },
+  "PA": {
+   "name": "Panamá",
+   "cur": "USD",
+   "loc": "es-PA",
+   "sal": [
+    700,
+    1500,
+    2800,
+    5500
+   ],
+   "ceo": 5500,
+   "mP": 1.2695,
+   "hP": 208,
+   "mG": 1.2695,
+   "hG": 208,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    90,
+    90,
+    90
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    450,
+    800,
+    1100,
+    1350
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "none",
+    "assess": "weak",
+    "bg": "none",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "Las agencias no publican tarifas en Panamá.",
+    "boards": "Computrabajo y Konzerta tienen planes gratis limitados; los planes de pago se cotizan con ventas.",
+    "assess": "US$30 por candidato en un proveedor local, × 3 finalistas. Nivel operativo sin pruebas.",
+    "bg": "Sin precio público verificable.",
+    "med": "Sin precio público verificable."
+   },
+   "salNote": "Estimado. Salario mínimo de referencia 2026 (comercio grande, región 1): US$3,02 por hora.",
+   "load": "CSS 13,25% (sube a 14,25% en marzo de 2027), seguro educativo 1,5%, riesgos profesionales ~1,05% (varía por actividad), décimo tercer mes con su cuota a la CSS y prima de antigüedad. Jornada de 48 h.",
+   "src": [
+    [
+     "TVN — calendario de la cuota patronal de la CSS",
+     "https://www.tvn-2.com/nacionales/reformas-a-la-css-aumento-escalonado-cuota-patronal-caja-de-seguro-social_1_2182102.html"
+    ],
+    [
+     "Morimor — Ley 462 de 2025",
+     "https://morimor.com/es/la-ley-462-del-18-de-marzo-de-2025-introduce-varias-reformas-importantes-a-la-caja-de-seguro-social-css-de-panama"
+    ],
+    [
+     "Deel — CSS Panamá",
+     "https://www.deel.com/es/blog/css-panama-seguridad-social-eor/"
+    ]
+   ]
+  },
+  "EC": {
+   "name": "Ecuador",
+   "cur": "USD",
+   "loc": "es-EC",
+   "sal": [
+    650,
+    1300,
+    2400,
+    4500
+   ],
+   "ceo": 4500,
+   "mP": 1.319,
+   "hP": 173.33,
+   "mG": 1.2971,
+   "hG": 173.33,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "assess": [
+    0,
+    750,
+    1125,
+    1500
+   ],
+   "bg": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "med": [
+    25,
+    25,
+    25,
+    25
+   ],
+   "setup": [
+    450,
+    800,
+    1100,
+    1350
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "none",
+    "assess": "weak",
+    "bg": "src",
+    "med": "weak"
+   },
+   "nt": {
+    "fee": "Las agencias no publican tarifas específicas de Ecuador.",
+    "boards": "Multitrabajos y Computrabajo tienen avisos gratis limitados; los planes de pago se cotizan con ventas.",
+    "assess": "Informe psicolaboral de una consultora: US$250–500 por candidato, × 3 finalistas. Una prueba en línea cuesta mucho menos: ajústalo a lo que usas.",
+    "bg": "El certificado de antecedentes penales es gratuito (Ministerio del Interior).",
+    "med": "Valoración médica ocupacional en un centro de Guayaquil: US$25."
+   },
+   "salNote": "Estimado. Salario Básico Unificado 2026: US$482.",
+   "load": "IESS 11,15% más IECE y SECAP (0,5% cada uno), décimo tercer sueldo, décimo cuarto (un SBU al año) y fondos de reserva de 8,33% desde el mes 13. Jornada de 40 h.",
+   "src": [
+    [
+     "Vistazo — Salario Básico Unificado 2026",
+     "https://www.vistazo.com/amp/actualidad/nacional/2025-12-15-salario-basico-usd-482-2026-ecuador-incremento-dolares-IC10565269"
+    ],
+    [
+     "Primicias — acuerdo de jornada MDT-2026-059",
+     "https://www.primicias.ec/economia/jornada-laboral-acuerdo-trabajo-empleo-flexibilidad-vigente-registro-oficial-117722/"
+    ],
+    [
+     "Runa — aporte patronal al IESS",
+     "https://runahr.com/ec/recursos/salario/aporte/"
+    ]
+   ]
+  },
+  "HN": {
+   "name": "Honduras",
+   "cur": "HNL",
+   "loc": "es-HN",
+   "sal": [
+    14000,
+    28000,
+    50000,
+    90000
+   ],
+   "ceo": 90000,
+   "mP": 1.2623,
+   "hP": 190.67,
+   "mG": 1.2269,
+   "hG": 190.67,
+   "fee": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "boards": [
+    622,
+    1000,
+    1000,
+    1325
+   ],
+   "assess": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "bg": [
+    400,
+    400,
+    400,
+    400
+   ],
+   "med": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "setup": [
+    12166,
+    21628,
+    29738,
+    36497
+   ],
+   "st": {
+    "fee": "none",
+    "boards": "weak",
+    "assess": "none",
+    "bg": "weak",
+    "med": "none"
+   },
+   "nt": {
+    "fee": "Las agencias no publican tarifas en Honduras.",
+    "boards": "Computrabajo: US$23, 37 o 49 por oferta según el plan, sin IVA, al tipo de cambio de L27,03. Empleos.hn es gratis.",
+    "assess": "Sin precio público verificable.",
+    "bg": "Antecedentes policiales (L200) y penales (L200). Muchas empresas se los piden pagar al candidato: pon 0 si es tu caso.",
+    "med": "No hay tarifa pública del examen pre-empleo."
+   },
+   "salNote": "Estimado. Salarios mínimos 2026: de L9.597 a L19.299 según actividad y tamaño de empresa.",
+   "load": "IHSS (enfermedad y maternidad 5%, IVM 3,5%, riesgos profesionales 0,2%) hasta un techo de L11.903, RAP 1,5% sobre el excedente, Fondo de Reserva Laboral 4%, INFOP 1%, aguinaldo y catorceavo. Jornada de 44 h.",
+   "src": [
+    [
+     "PwC — cotizaciones IHSS 2025",
+     "https://www.pwc.com/ia/es/publicaciones/Noticias-Tax-Legal/Tax-and-legal-2025/cotizaciones-2025-IHSS.pdf"
+    ],
+    [
+     "RAP — techos y porcentajes 2025",
+     "https://rap.hn/wp-content/uploads/2025/01/COMUNICADO-TECHOS-Y-PORCENTAJES-2025-RAP-1.pdf"
+    ],
+    [
+     "Deloitte — Fondo de Reserva Laboral",
+     "https://www.deloitte.com/latam/es/services/tax/perspectives/tax-flash-240605.html"
+    ],
+    [
+     "El Heraldo — salario mínimo 2026",
+     "https://www.elheraldo.hn/economia/cuanto-oscila-ajuste-salarial-2026-actividades-economicas-CI30382462"
     ]
    ]
   }

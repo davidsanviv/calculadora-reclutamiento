@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.1.1 (2026-11)
+- Colombia: el multiplicador de carga social excluye vacaciones, igual que los demás países (1,35 con exoneración de la Ley 1607; 1,48 sin ella).
+
 ## 1.1.0 (2026-11)
 - Nuevos países: Perú, Costa Rica, Panamá, Ecuador y Honduras.
 - Perú usa el régimen general; en pequeña empresa y microempresa la carga social es menor.

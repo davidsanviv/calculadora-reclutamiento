@@ -1,5 +1,5 @@
 {
- "version": "1.1.0",
+ "version": "1.1.1",
  "actualizado": "2026-11",
  "niveles": [
   "Operativo",
@@ -143,9 +143,9 @@
     17000000
    ],
    "ceo": 17000000,
-   "mP": 1.38,
+   "mP": 1.3466,
    "hP": 182,
-   "mG": 1.52,
+   "mG": 1.4816,
    "hG": 182,
    "fee": [
     0.12,
@@ -198,7 +198,7 @@
     "med": "Examen de ingreso según riesgo ARL (obligatorio)."
    },
    "salNote": "Estimado. SMMLV 2026: $1.750.905.",
-   "load": "Salud, pensión, ARL, parafiscales, cesantías, prima y vacaciones. Exoneración de la Ley 1607 en salarios menores a 10 SMMLV. Jornada de 42 h.",
+   "load": "Salud, pensión, ARL, parafiscales (caja, SENA, ICBF), cesantías con intereses y prima de servicios; las vacaciones no se suman porque ya son sueldo pagado. Exoneración de la Ley 1607 en salarios menores a 10 SMMLV (aquí se aplica a quien recluta; al jefe y al CEO no). Jornada de 42 h.",
    "src": [
     [
      "Decreto 0159 de 2026 (SMMLV), Ley 2101 de 2021 (jornada) y Ley 1607 / Art. 114-1 ET (exoneración)",
